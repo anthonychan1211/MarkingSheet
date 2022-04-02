@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+html{
+    background-color: cadetblue;
+    
+}
+body {
+    background-color: cornsilk;
+    margin: 0% 15% 0% 15%;
+    padding: 5%;
+    color: rgb(66, 66, 66);
+    min-height: 600px;
+}
+.title{
+    font-size: large;
+    font-family: 'Inter', sans-serif;
+    padding-right: 5px;
+}
+
+button{
+    padding: 13px;
+    font-size: 16px;
+    background-color: #4d6485;
+    color: rgb(224, 224, 224);
+    border-radius: 7px;
+    border: 0px
+}
+input{
+    font-size: 20px;
+    padding: 4px;
+
+}
+input[type=text]:focus {
+    border: 3px solid #555;
+  }
+#candidate-number, #judge-number{
+    width: 50px;
+}
+#mark-header{
+    margin-left: 507px;
+    font-size: 27px;
+    font-weight: 300;
+}
+.candidate-label{
+    font-size: 20px;
+    display: inline;
+    padding-right: 5px;
+}
+.mark-input{
+    width: 50px;
+    margin:1%;
+}
+.calculate-button{
+    font-size: 15px;
+    padding: 10px;
+}
+.final-mark{
+    margin-left : 25px;
+    font-size: 22px
+}
+.candidate-row{
+    margin-top: 10px
+}
+#rank-button{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+th, td{
+    border: 2px solid rgb(71, 71, 104);
+    padding: 5;
+    font-size: 20px;
+    padding: 10px;
+}
