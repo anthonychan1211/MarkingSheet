@@ -51,7 +51,8 @@ form.addEventListener('submit', function (e) {
         const numberVersion = candidateMarks.map(x => parseInt(x));
         const totalMark = numberVersion.reduce((a,b)=> a + b,0)
         const averageMark = totalMark / candidateMarks.length;
-        final.innerText = averageMark;
+        const rounded = Math.round((averageMark + Number.EPSILON) * 100) / 100
+        final.innerText = rounded;
     })
 
     }
