@@ -68,10 +68,10 @@ form.addEventListener('submit', function (e) {
         e.preventDefault();
        for(let i = 1 ; i <= candidateNum.value ; i++){
             let candidate = document.getElementById(`candidate${i}`)
-            let numver = parseInt(candidate.innerText, 10)
+            console.log(candidate);
             let obj = {};
             obj['candidate'] = i;
-            obj['mark'] = numver;
+            obj['mark'] = candidate.innerText;
             rankList.push(obj)
        }
 
