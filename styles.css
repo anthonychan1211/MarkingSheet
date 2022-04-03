@@ -5,10 +5,20 @@ html{
 }
 body {
     background-color: cornsilk;
-    margin: 0% 15% 0% 15%;
     padding: 5%;
     color: rgb(66, 66, 66);
     min-height: 600px;
+}
+.page-title{
+    font-family: 'Inter', sans-serif;
+}
+.description{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: 'Inter', sans-serif;
+}
+.list-item{
+    padding-top: 7px;
 }
 .title{
     font-size: large;
