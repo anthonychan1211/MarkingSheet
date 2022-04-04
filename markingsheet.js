@@ -5,13 +5,15 @@ form.addEventListener('submit', function (e) {
     submitButton.style.display = 'none'
     const candidateNum = document.getElementById("candidate-number")
     const judgeNum = document.getElementById("judge-number")
+
+    //Create Grid Container
+    const gridContainer = document.querySelector('.grid-container')
     //Create Judge Header
     const markHeader = document.createElement('div')
     markHeader.id = 'mark-header'
     markHeader.innerText = 'Mark'
-    document.body.appendChild(markHeader);
+    gridContainer.appendChild(markHeader);
     //Create Row Content
-
     for(let i = 1; i <= candidateNum.value; i++){
         const candidateRow = document.createElement('div')
         candidateRow.className='candidate-row';
@@ -34,6 +36,7 @@ form.addEventListener('submit', function (e) {
         final.id = `candidate${i}`
         final.className ='final-mark'
         candidateRow.appendChild(final)
+        
         document.body.appendChild(candidateRow);
 
          //Add calculate function
@@ -62,59 +65,118 @@ form.addEventListener('submit', function (e) {
     showRank.id = 'rank-button'
     showRank.innerText = 'Rank';
     document.body.appendChild(showRank);
-    const rankList = [];
+    let pressed = false;
     //Show Rank Function
     showRank.addEventListener('click', function(e){
-        e.preventDefault();
-       for(let i = 1 ; i <= candidateNum.value ; i++){
-            let candidate = document.getElementById(`candidate${i}`)
-            console.log(candidate);
-            let obj = {};
-            obj['candidate'] = i;
-            obj['mark'] = candidate.innerText;
-            rankList.push(obj)
-       }
-
-        rankList.sort(function (a, b) {
-        return b.mark - a.mark;
-      });
-      for(let i = 1 ; i <= candidateNum.value ; i++){
-          rankList[i-1]['Rank'] = i
-      }
-      console.log(rankList);
-      
-      //Create Rank Table
-
-      const rankTable = document.createElement('table');
-      let headers = ['Rank', 'Candidate', 'Mark'];
-      let headerRow = document.createElement('tr')
-      headers.forEach(header=> {
-          let tableHeader = document.createElement('th');
-          let textNode = document.createTextNode(header);
-          tableHeader.appendChild(textNode); 
-          headerRow.appendChild(tableHeader)
-      })
-      rankTable.appendChild(headerRow)
-      
-    for(let i = 1 ; i <= candidateNum.value ; i++){
-        let row = document.createElement('tr');
-        let rankCell = document.createElement('td');
-        let rankTextNode = document.createTextNode(i);
-        rankCell.appendChild(rankTextNode);
-        let canNumCell = document.createElement('td');
-        let canNumTextNode = document.createTextNode(`Candidate ${rankList[i-1]['candidate']}`);
-        canNumCell.appendChild(canNumTextNode);
-        let markCell = document.createElement('td');
-        let markTextNode = document.createTextNode(rankList[i-1]['mark']);
-        markCell.appendChild(markTextNode);
-        row.appendChild(rankCell);
-        row.appendChild(canNumCell);
-        row.appendChild(markCell);
-        rankTable.appendChild(row)
-    }
+        if(pressed == false){
+            const rankList = [];
+            console.log(pressed);
+            e.preventDefault();
+           for(let i = 1 ; i <= candidateNum.value ; i++){
+                let candidate = document.getElementById(`candidate${i}`)
+                let obj = {};
+                obj['candidate'] = i;
+                obj['mark'] = candidate.innerText;
+                rankList.push(obj)
+           }
     
-    document.body.appendChild(rankTable)
-    })
-
+            rankList.sort(function (a, b) {
+            return b.mark - a.mark;
+          });
+          for(let i = 1 ; i <= candidateNum.value ; i++){
+              rankList[i-1]['Rank'] = i
+          }
+          console.log(rankList);
+          
+          //Create Rank Table
+          const rankTable = document.createElement('table');
+          rankTable.id = 'rank-table';
+          let headers = ['Rank', 'Candidate', 'Mark'];
+          let headerRow = document.createElement('tr')
+          headers.forEach(header=> {
+              let tableHeader = document.createElement('th');
+              let textNode = document.createTextNode(header);
+              tableHeader.appendChild(textNode); 
+              headerRow.appendChild(tableHeader)
+          })
+          rankTable.appendChild(headerRow)
+          
+        for(let i = 1 ; i <= candidateNum.value ; i++){
+            let row = document.createElement('tr');
+            let rankCell = document.createElement('td');
+            let rankTextNode = document.createTextNode(i);
+            rankCell.appendChild(rankTextNode);
+            let canNumCell = document.createElement('td');
+            let canNumTextNode = document.createTextNode(`Candidate ${rankList[i-1]['candidate']}`);
+            canNumCell.appendChild(canNumTextNode);
+            let markCell = document.createElement('td');
+            let markTextNode = document.createTextNode(rankList[i-1]['mark']);
+            markCell.appendChild(markTextNode);
+            row.appendChild(rankCell);
+            row.appendChild(canNumCell);
+            row.appendChild(markCell);
+            rankTable.appendChild(row)
+        }
+        
+        document.body.appendChild(rankTable)
+        pressed = true
+        return ;
+        }
+           if(pressed == true){
+               const oldTable = document.getElementById('rank-table');
+               oldTable.remove();
+               const rankList = [];
+            console.log(pressed);
+            e.preventDefault();
+           for(let i = 1 ; i <= candidateNum.value ; i++){
+                let candidate = document.getElementById(`candidate${i}`)
+                let obj = {};
+                obj['candidate'] = i;
+                obj['mark'] = candidate.innerText;
+                rankList.push(obj)
+           }
+    
+            rankList.sort(function (a, b) {
+            return b.mark - a.mark;
+          });
+          for(let i = 1 ; i <= candidateNum.value ; i++){
+              rankList[i-1]['Rank'] = i
+          }
+          console.log(rankList);
+          
+          //Create Rank Table
+          const rankTable = document.createElement('table');
+          rankTable.id = 'rank-table';
+          let headers = ['Rank', 'Candidate', 'Mark'];
+          let headerRow = document.createElement('tr')
+          headers.forEach(header=> {
+              let tableHeader = document.createElement('th');
+              let textNode = document.createTextNode(header);
+              tableHeader.appendChild(textNode); 
+              headerRow.appendChild(tableHeader)
+          })
+          rankTable.appendChild(headerRow)
+          
+        for(let i = 1 ; i <= candidateNum.value ; i++){
+            let row = document.createElement('tr');
+            let rankCell = document.createElement('td');
+            let rankTextNode = document.createTextNode(i);
+            rankCell.appendChild(rankTextNode);
+            let canNumCell = document.createElement('td');
+            let canNumTextNode = document.createTextNode(`Candidate ${rankList[i-1]['candidate']}`);
+            canNumCell.appendChild(canNumTextNode);
+            let markCell = document.createElement('td');
+            let markTextNode = document.createTextNode(rankList[i-1]['mark']);
+            markCell.appendChild(markTextNode);
+            row.appendChild(rankCell);
+            row.appendChild(canNumCell);
+            row.appendChild(markCell);
+            rankTable.appendChild(row)
+        }
+        
+        document.body.appendChild(rankTable)
+           } 
+        })
+    
 });
   

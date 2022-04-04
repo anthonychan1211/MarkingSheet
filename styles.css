@@ -47,8 +47,15 @@ input[type=text]:focus {
 #candidate-number, #judge-number{
     width: 50px;
 }
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+    justify-content: center;
+}
 #mark-header{
-    margin-left: 600px;
+   
+    grid-column: 2 / -1;
     font-size: 27px;
     font-weight: 300;
     font-family: 'Inter', sans-serif;
@@ -70,11 +77,14 @@ input[type=text]:focus {
     margin-left: 15px
 }
 .final-mark{
+    grid-column: 2 / 3;
     margin-left : 55px;
     font-size: 24px;
     font-family: 'Inter', sans-serif;
 }
 .candidate-row{
+   
+    grid-column: 1 / 2;
     margin-top: 10px
 }
 #rank-button{
