@@ -47,18 +47,19 @@ input[type=text]:focus {
 #candidate-number, #judge-number{
     width: 50px;
 }
-/* #empty-div{
-    grid: 1/2;
-}
-     */
-
 .grid-container{
     display: grid;
-    grid-template-columns: 3fr 1fr; 
-   
+    grid-template-columns: 2fr 1fr; 
+    justify-content: center;
+    align-items: center;
+}
+#empty-div{
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 #mark-header{
-    grid: 2 / 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
     font-size: 27px;
     font-weight: 300;
     font-family: 'Inter', sans-serif;
@@ -80,13 +81,14 @@ input[type=text]:focus {
     margin-left: 15px
 }
 .final-mark{
-    grid: 2/3;
+    grid-column-start: 2;
+    grid-column-end: 3;
     font-size: 24px;
     font-family: 'Inter', sans-serif;
 }
 .candidate-row{
-    grid: 1 / 2;
-    margin-top: 10px
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 #rank-button{
     margin-top: 20px;

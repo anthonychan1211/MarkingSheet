@@ -9,9 +9,9 @@ form.addEventListener('submit', function (e) {
     //Create Grid Container
     const gridContainer = document.querySelector('.grid-container')
     //Create Judge Header
-    // const emptydiv = document.createElement('div')
-    // emptydiv.id = 'empty-div'
-    // gridContainer.appendChild(emptydiv)
+    const emptydiv = document.createElement('div')
+    emptydiv.id = 'empty-div'
+    gridContainer.appendChild(emptydiv)
     const markHeader = document.createElement('div')
     markHeader.id = 'mark-header'
     markHeader.innerText = 'Mark'
@@ -38,10 +38,8 @@ form.addEventListener('submit', function (e) {
         const final = document.createElement('div')
         final.id = `candidate${i}`
         final.className ='final-mark'
-        gridContainer.appendChild(final)
-        
         gridContainer.appendChild(candidateRow);
-
+        gridContainer.appendChild(final)
          //Add calculate function
 
     calculateButton.addEventListener('click', function(e){
