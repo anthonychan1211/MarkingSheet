@@ -4,23 +4,23 @@ form.addEventListener('submit', function (e) {
     const candidateNum = document.getElementById("candidate-number")
     const judgeNum = document.getElementById("judge-number")
     if(judgeNum.value < 3){
-        alert('評審人數不能少於3個');
+        alert('Number of Judge should be at least 3');
     } else{
         const submitButton = document.getElementById('submit');
         submitButton.style.display = 'none'
-        let languagechange = document.getElementById("en")
+        let languagechange = document.getElementById("zh")
         languagechange.removeAttribute("href")
         //Create Grid Container
     const gridContainer = document.querySelector('.grid-container')
     //Create Judge Header
     const nameHeader = document.createElement('div')
     nameHeader.id = 'name-header'
-    nameHeader.innerText = '姓名'
+    nameHeader.innerText = 'Name'
     gridContainer.appendChild(nameHeader);
 
     const markHeader = document.createElement('div')
     markHeader.id = 'mark-header'
-    markHeader.innerText = '平均分'
+    markHeader.innerText = 'Mark'
     gridContainer.appendChild(markHeader);
 
     //Create Row Content
@@ -29,7 +29,7 @@ form.addEventListener('submit', function (e) {
         const candidateRow = document.createElement('div')
         candidateRow.className='candidate-row';
         const candidateNo = document.createElement('div')
-        candidateNo.innerText = `參賽者 ${i}`
+        candidateNo.innerText = `Candidate ${i}`
         candidateNo.className = 'candidate-label';
         candidateRow.appendChild(candidateNo);
 
@@ -45,7 +45,7 @@ form.addEventListener('submit', function (e) {
             candidateRow.appendChild(inputBox);
         }
         const calculateButton = document.createElement('button');
-        calculateButton.innerText = '算分';
+        calculateButton.innerText = 'Calculate';
         calculateButton.type = 'submit';
         calculateButton.className = 'calculate-button';
         candidateRow.appendChild(calculateButton);
@@ -78,7 +78,7 @@ form.addEventListener('submit', function (e) {
     //Show Rank Button
     const showRank = document.createElement('button')
     showRank.id = 'rank-button'
-    showRank.innerText = '排名';
+    showRank.innerText = 'Rank';
     document.body.appendChild(showRank);
     let pressed = false;
     //Show Rank Function
@@ -107,7 +107,7 @@ form.addEventListener('submit', function (e) {
           //Create Rank Table
           const rankTable = document.createElement('table');
           rankTable.id = 'rank-table';
-          let headers = ['排名', '參賽者編號', '參賽者姓名', '分數'];
+          let headers = ['Rank', 'Candidate No.', 'Name', 'Mark'];
           let headerRow = document.createElement('tr')
           headers.forEach(header=> {
               let tableHeader = document.createElement('th');
@@ -123,7 +123,7 @@ form.addEventListener('submit', function (e) {
             let rankTextNode = document.createTextNode(i);
             rankCell.appendChild(rankTextNode);
             let canNumCell = document.createElement('td');
-            let canNumTextNode = document.createTextNode(`參賽者 ${rankList[i-1]['candidate']}`);
+            let canNumTextNode = document.createTextNode(`Candidate ${rankList[i-1]['candidate']}`);
             canNumCell.appendChild(canNumTextNode);
             let canNameCell = document.createElement('td');
             let canName = rankList[i-1]['candidateName'];
@@ -170,7 +170,7 @@ form.addEventListener('submit', function (e) {
           //Create Rank Table
           const rankTable = document.createElement('table');
           rankTable.id = 'rank-table';
-          let headers = ['排名', '參賽者編號', '參賽者姓名', '分數'];
+          let headers = ['Rank', 'Candidate No.', 'Name', 'Mark'];
           let headerRow = document.createElement('tr')
           headers.forEach(header=> {
               let tableHeader = document.createElement('th');
@@ -186,7 +186,7 @@ form.addEventListener('submit', function (e) {
             let rankTextNode = document.createTextNode(i);
             rankCell.appendChild(rankTextNode);
             let canNumCell = document.createElement('td');
-            let canNumTextNode = document.createTextNode(`參賽者 ${rankList[i-1]['candidate']}`);
+            let canNumTextNode = document.createTextNode(`Candidate ${rankList[i-1]['candidate']}`);
             canNumCell.appendChild(canNumTextNode);
             let canNameCell = document.createElement('td');
             let canName = rankList[i-1]['candidateName'];

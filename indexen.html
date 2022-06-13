@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marking Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <a href="index.html" id="zh">中</a>｜<a>en</a>
+    </div>
+    <h1 class="page-title">Marking Sheet</h1>
+    <div class="description">
+        <p>*This page contains 3 features:
+            <ul>
+                <li class="list-item">Generate a marking sheet for competitions depending on the numbers of judges and candidates;
+                </li>
+                <li class="list-item">Calculate the average mark after taking away the highest and lowest mark among the jugdes;
+                </li>
+                <li class="list-item">Rank the candidates</li>
+            </ul>
+
+    </p>
+    </div>
+   
+    <form id='form'> 
+        <div><label class="title">Candidate Number:</label>
+            <input id="candidate-number"></input>
+        </div>     
+        <br>
+        <div>
+            <label class="title">Judge Number: (at least 3)</label>
+        <input id="judge-number"></input>
+        </div> 
+        <br>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    <div class="grid-container"></div>
+    <script src="markingsheeten.js"></script>
+</body>
+</html>

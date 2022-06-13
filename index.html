@@ -8,30 +8,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 class="page-title">Marking Sheet</h1>
+    <div>
+        <span>中</span>｜<a href="indexen.html" id="en">en</a>
+    </div>
+    <h1 class="page-title">計分表</h1>
     <div class="description">
-        <p>*This page contains 3 features:
+        <p>*這個頁面有3個特色：
 
             <ul>
-                <li class="list-item">Generate a marking sheet for competitions depending on the numbers of judges and candidates;</li>
-                <li class="list-item">Calculate the average mark after taking away the highest and lowest mark among the jugdes;</li>
-                <li class="list-item">Rank the candidates</li>
+                <li class="list-item">按照參賽者和評審人數生成計分表</li>
+                <li class="list-item">去掉最高分和最低分算平均分</li>
+                <li class="list-item">計算最終排名</li>
             </ul>
 
     </p>
     </div>
    
     <form id='form'> 
-        <div><label class="title">Candidate Number:</label>
+        <div><label class="title">參賽者人數：</label>
             <input id="candidate-number"></input>
         </div>     
         <br>
         <div>
-            <label class="title">Judge Number: (at least 3)</label>
+            <label class="title">評審人數（最少3人）：</label>
         <input id="judge-number"></input>
         </div> 
         <br>
-        <button type="submit" id="submit">Submit</button>
+        <button type="submit" id="submit">生成</button>
     </form>
     <div class="grid-container"></div>
     <script src="markingsheet.js"></script>
