@@ -26,17 +26,23 @@
     </div>
    
     <form id='form'> 
-        <div><label class="title">Candidate Number:</label>
+        <div><label class="title">Number of Candidate:</label>
             <input id="candidate-number"></input>
         </div>     
         <br>
         <div>
-            <label class="title">Judge Number: (at least 3)</label>
+            <label class="title">Number of Judge: (at least 3)</label>
         <input id="judge-number"></input>
         </div> 
         <br>
         <button type="submit" id="submit">Submit</button>
     </form>
+    <div id="modal-container">
+        <p>Do you want to recover form data?</p>
+        <button id="revive">Yes</button>
+        <button id="new">No</button>
+
+    </div>
     <div class="grid-container"></div>
     <script src="markingsheeten.js"></script>
 </body>
