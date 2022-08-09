@@ -246,7 +246,7 @@ if(localStorage.length !== 0 ){
             //Create Judge Header
             const nameHeader = document.createElement('div')
             nameHeader.id = 'name-header'
-            nameHeader.innerText = '姓名'
+            nameHeader.innerText = 'Name'
             gridContainer.appendChild(nameHeader);
         
             const markHeader = document.createElement('div')
