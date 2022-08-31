@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 html{
     background-color: cadetblue;
-    
+    width: 1280px;
 }
 body {
     background-color: cornsilk;
@@ -98,7 +98,7 @@ input[type=text]:focus {
     font-family: 'Inter', sans-serif;
 }
 .candidate-label{
-    font-size: 1.3vw;
+    font-size: 1em;
     display: inline-block;
     font-family: 'Inter', sans-serif;
     margin-right: 2vw
